@@ -109,4 +109,23 @@ public class LoginTesting {
         Login user = new Login("Kyle", "Barnes", "kyl_1", "Ch&&sec@ke99!", "+27838968976");
         assertEquals(false, user.loginUser("kyl_1", "wrongpassword"));
     }
+     
+    @Test
+    public void testRegisterUserInvalidUsername() {
+        Login user = new Login("Kyle", "Barnes", "kyle!!!!!!", "Ch&&sec@ke99!", "+27838968976");
+        assertEquals("Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.", user.registerUser());
+    }
+
+    @Test
+    public void testRegisterUserInvalidPassword() {
+        Login user = new Login("Kyle", "Barnes", "kyl_1", "password", "+27838968976");
+        assertEquals("Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number, and a special character.", user.registerUser());
+    }
+
+    @Test
+    public void testRegisterUserSuccessful() {
+        Login user = new Login("Kyle", "Barnes", "kyl_1", "Ch&&sec@ke99!", "+27838968976");
+        assertEquals("Registration successful.", user.registerUser());
+    }
 }   
+  
