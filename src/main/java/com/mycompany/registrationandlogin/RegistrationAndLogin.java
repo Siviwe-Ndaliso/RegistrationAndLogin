@@ -70,10 +70,20 @@ public class RegistrationAndLogin {
 
             System.out.print("Enter your password: ");
             String enteredPassword = scanner.nextLine();
+            
+            
+          if (user.loginUser(enteredUsername, enteredPassword)) {
+    System.out.println(user.returnLoginStatus(enteredUsername, enteredPassword));
 
-            System.out.println(user.returnLoginStatus(enteredUsername, enteredPassword));
-        }
+    QuickChat quickChat = new QuickChat(scanner);
+    quickChat.start();
+
+} else {
+    System.out.println(user.returnLoginStatus(enteredUsername, enteredPassword));
+}
+           
 
         scanner.close();
     }
-}      
+}    
+}

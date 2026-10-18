@@ -13,6 +13,7 @@
         <exec.mainClass>com.mycompany.registrationandlogin.RegistrationAndLogin</exec.mainClass>
     </properties>
 
+   
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -20,6 +21,13 @@
             <version>5.13.4</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20250517</version>
+        </dependency>
     </dependencies>
+
 
 </project>
